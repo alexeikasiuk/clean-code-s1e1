@@ -104,23 +104,23 @@ var deleteTask = function () {
 };
 
 //Mark task completed
-var taskCompleted = function () {
+var moveToCompleted = function () {
   console.log('Complete Task...');
 
   //Append the task list item to the #completed-tasks
   var listItem = this.parentNode;
   completedTasksHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskIncomplete);
+  bindTaskEvents(listItem, moveToIncomplete);
 };
 
-var taskIncomplete = function () {
+var moveToIncomplete = function () {
   console.log('Incomplete Task...');
   //Mark task as incomplete.
   //When the checkbox is unchecked
   //Append the task list item to the #incompleteTasks.
   var listItem = this.parentNode;
   incompleteTaskHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskCompleted);
+  bindTaskEvents(listItem, moveToCompleted);
 };
 
 var ajaxRequest = function () {
@@ -153,13 +153,13 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
 //for each list item
 for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
   //bind events to list items chldren(tasksCompleted)
-  bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
+  bindTaskEvents(incompleteTaskHolder.children[i], moveToCompleted);
 }
 
 //cycle over completedTasksHolder ul list items
 for (var i = 0; i < completedTasksHolder.children.length; i++) {
   //bind events to list items chldren(tasksIncompleted)
-  bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+  bindTaskEvents(completedTasksHolder.children[i], moveToIncomplete);
 }
 
 // Issues with usability don't get seen until they are in front of a human tester.
