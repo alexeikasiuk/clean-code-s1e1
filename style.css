@@ -16,13 +16,6 @@
 .more_inf {
   font-family: fantasy, cursive;
 }
-
-@media (max-width: 768px) {
-  .sponsor {
-    text-align: center;
-  }
-}
-
 .centered-element {
   display: block;
   width: 500px;
@@ -33,7 +26,6 @@
   flex: 1;
 }
 .task {
-  /* width: 56%; */
   display: inline-block;
   flex-grow: 1;
 }
@@ -64,6 +56,7 @@
 .edit:hover {
   color: #3a3a3a;
 }
+
 /* Heading */
 .title,
 .new-task {
@@ -90,6 +83,7 @@
 .input:focus {
   color: #333;
 }
+
 /* New Task */
 .new-task {
   display: block;
@@ -98,6 +92,7 @@
 #new-task {
   width: 318px;
 }
+
 /* Task list */
 .task {
   overflow: hidden;
@@ -131,11 +126,14 @@
 .delete-img:hover {
   transform: rotateZ(0);
 }
+
 /* Completed */
 #completed-tasks .name {
   text-decoration: line-through;
   color: #888;
 }
+d
+
 /* Edit Task */
 .input {
   display: none;
@@ -146,4 +144,11 @@
 }
 .task.edit-mode .name {
   display: none;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .sponsor {
+    text-align: center;
+  }
 }
